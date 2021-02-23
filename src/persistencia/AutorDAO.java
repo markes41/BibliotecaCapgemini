@@ -20,16 +20,13 @@ public class AutorDAO implements Serializable{
 		em.close();
 	}
 	
-	public void consultarAutores() throws Exception{
+	public ArrayList<Autor> consultarAutores() throws Exception{
 		EntityManager em = managerFactory.createEntityManager();
 		EntityTransaction tran = em.getTransaction();
 		tran.begin();
-		
 		ArrayList<Autor> autores = (ArrayList<Autor>) em.createQuery("select a from Autor a").getResultList();
-		for(Autor a : autores) {
-			System.out.println(a.getNombre());
-		}
 		tran.commit();
 		em.close();
+		return autores;
 	}
 }
