@@ -57,6 +57,7 @@ public class Lector {
 	{
 		Scanner sc = new Scanner(System.in);
 		int i = 1, opc;
+		Multa corroborar_multa = new Multa();
 		
 		for(Copia libro : lector.libros_prestados.values()) {
 			System.out.println("ID: "+libro.getId()+"\nTitulo del libro: "+libro.getTitulo()+"\n");
@@ -66,6 +67,7 @@ public class Lector {
 		System.out.println("Elegí el ID del libro que querés devolver: ");
 		opc = sc.nextInt();
 		
+		corroborar_multa.multar(lector.libros_prestados.get(opc), lector);
 		lector.libros_prestados.remove(opc);
 		
 	}
@@ -98,6 +100,7 @@ public class Lector {
 			GregorianCalendar fecha = new GregorianCalendar();
 			Copia libro_elegido = libros_disponibles.get(opc_libro);
 			libro_elegido.setFecha_dada(fecha);
+			libro_elegido.setDias_prestados(Integer.parseInt(dias_alquilar));
 			lector.libros_prestados.put(opc_libro+1, libro_elegido);
 			
 			
@@ -111,9 +114,6 @@ public class Lector {
 		return libros_disponibles;
 	}
 	
-	public void multar(int cantidad_dias, Lector lector_multado)
-	{
-		
-	}
+
 
 }

@@ -3,7 +3,7 @@ package models;
 import java.util.GregorianCalendar;
 
 public class Copia extends Libro{
-	private int id, status, cantidad;
+	private int id, status, cantidad, dias_prestados;
 	private GregorianCalendar fecha_dada;
 
 	public Copia(String titulo, String editorial, String tipo, int anio, Autor autor, int id, int status,
@@ -46,6 +46,14 @@ public class Copia extends Libro{
 
 	public void setCantidad(int cantidad) {
 		this.cantidad = cantidad;
+	}
+
+	public int getDias_prestados() {
+		return dias_prestados;
+	}
+
+	public void setDias_prestados(int dias_prestados) {
+		this.dias_prestados = dias_prestados;
 	}
 
 	

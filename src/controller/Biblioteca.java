@@ -2,13 +2,15 @@ package controller;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
 import models.Autor;
 import models.Copia;
 import models.Lector;
 
 public class Biblioteca {
 
-	public static void main(String[] args) {
+	public static void main(String[] args){
+	      
 		Scanner sc = new Scanner(System.in);
 		MenuOpc opciones = new MenuOpc();
 		String opc;
@@ -54,7 +56,6 @@ public class Biblioteca {
 		}
 		
 		}while(!(opc.equals("3")));
-		
 	}
 
 }
