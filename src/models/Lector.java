@@ -7,6 +7,13 @@ import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.Scanner;
 
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorType;
+import javax.persistence.Entity;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.Table;
+
 import controller.MenuOpc;
 
 public class Lector {

@@ -1,16 +1,23 @@
 package models;
+import java.io.Serializable;
 import java.util.Calendar;
 
-public class Autor {
-	private String nombre, nacionalidad;
+import javax.persistence.*;
+
+@Entity
+@Inheritance (strategy=InheritanceType.SINGLE_TABLE)  
+@Table(name="Autores")
+public class Autor implements Serializable{
+
+	private static final long serialVersionUID = -1461119577503049112L;
+	@Id
+	private String nombre;
+	@Column
+	private String nacionalidad;
+	@Column
 	private String nacimiento;
 	
-	public Autor(String nombre, String nacionalidad, String nacimiento) {
-		super();
-		this.nombre = nombre;
-		this.nacionalidad = nacionalidad;
-		this.nacimiento = nacimiento;
-	}
+
 	
 	public String getNombre() {
 		return nombre;
@@ -30,6 +37,7 @@ public class Autor {
 	public void setNacimiento(String nacimiento) {
 		this.nacimiento = nacimiento;
 	}
+	
 	
 }
 

@@ -2,16 +2,30 @@ package controller;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
 
 import models.Autor;
 import models.Copia;
 import models.Lector;
+import persistencia.AutorDAO;
+import servicios.AutorService;
 
 public class Biblioteca {
 
-	public static void main(String[] args){
-	      
-		Scanner sc = new Scanner(System.in);
+	public static void main(String[] args) throws Exception{
+		Autor a = new Autor();
+		a.setNombre("Mark");
+		a.setNacimiento("1998");
+		a.setNacionalidad("Argentina");
+		AutorDAO autor = new AutorDAO();
+		autor.agregarAutor(a);
+		
+		
+		
+		/*Scanner sc = new Scanner(System.in);
 		MenuOpc opciones = new MenuOpc();
 		String opc;
 		
@@ -55,7 +69,7 @@ public class Biblioteca {
 				break;
 		}
 		
-		}while(!(opc.equals("3")));
+		}while(!(opc.equals("3")));*/
 	}
 
 }
